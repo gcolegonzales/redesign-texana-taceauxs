@@ -61,8 +61,8 @@ complete Open Graph + Twitter Card tags, a canonical link, plus `robots.txt` and
 
 **Base URL placeholder:** the canonical, `og:url`, `og:image`, sitemap, robots
 `Sitemap:` line, and the schema `url`/`image` all use the literal placeholder
-`https://REPLACE-WITH-DOMAIN.com/`. At deploy, do a single find-and-replace of
-`https://REPLACE-WITH-DOMAIN.com/` with the real domain across `index.html`,
+`https://texanataceauxs.com/`. At deploy, do a single find-and-replace of
+`https://texanataceauxs.com/` with the real domain across `index.html`,
 `robots.txt`, and `sitemap.xml`.
 
 ## View it
