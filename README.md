@@ -52,6 +52,19 @@ Fully static, self-contained, no build step: `index.html` + `styles.css` +
 mobile-first, accessible, with tasteful motion that respects
 `prefers-reduced-motion`.
 
+## SEO
+
+On-page SEO is wired up: a `FoodEstablishment` JSON-LD block (name, telephone,
+hours, `servesCuisine` Tex-Mex/Cajun, price range, area served, sameAs socials),
+complete Open Graph + Twitter Card tags, a canonical link, plus `robots.txt` and
+`sitemap.xml` at the repo root.
+
+**Base URL placeholder:** the canonical, `og:url`, `og:image`, sitemap, robots
+`Sitemap:` line, and the schema `url`/`image` all use the literal placeholder
+`https://REPLACE-WITH-DOMAIN.com/`. At deploy, do a single find-and-replace of
+`https://REPLACE-WITH-DOMAIN.com/` with the real domain across `index.html`,
+`robots.txt`, and `sitemap.xml`.
+
 ## View it
 
 Open **`index.html`** by double-clicking it, or serve the folder statically. Works
