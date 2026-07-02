@@ -333,34 +333,28 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:.98;lett
   padding:1rem clamp(1.1rem,3vw,1.6rem);background:var(--ink);color:var(--cream);
 }
 .sched__month{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.5px}
-.sched__legend{display:flex;gap:1rem;font-size:.78rem;color:rgba(255,247,234,.75)}
-.lg{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
-.lg--open{background:var(--lime-bright)}
-.lg--closed{background:#8a7a6a}
+.sched__live{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;color:rgba(255,247,234,.75)}
+.sched__live .dot{width:9px;height:9px;border-radius:50%;background:var(--lime-bright)}
+.dot--live{box-shadow:0 0 0 0 rgba(127,191,90,.6);animation:livepulse 2.2s var(--ease) infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(127,191,90,.55)}70%{box-shadow:0 0 0 8px rgba(127,191,90,0)}100%{box-shadow:0 0 0 0 rgba(127,191,90,0)}}
 
-.sched__list{list-style:none}
-.row{
-  display:grid;grid-template-columns:64px 1fr auto;gap:1rem;align-items:center;
-  padding:.9rem clamp(1.1rem,3vw,1.6rem);border-bottom:1px solid var(--line);
-  transition:background .25s var(--ease),transform .25s var(--ease);
-}
-.row:last-of-type{border-bottom:none}
-.row--open:hover{background:#fffdf5;transform:translateX(4px)}
-.row__day b{font-family:var(--font-display);font-size:1.15rem;color:var(--chili)}
-.row--closed .row__day b{color:var(--ink-soft)}
-.row__where{font-weight:600;color:var(--ink);font-size:.98rem}
-.row--closed .row__where{color:var(--ink-soft);font-weight:500}
-.row__sub{display:block;font-weight:400;font-size:.8rem;color:var(--ink-soft);margin-top:.1rem}
-.row__time{
-  font-family:var(--font-display);font-size:.95rem;color:var(--ink);white-space:nowrap;
-  background:var(--cream-2);padding:.3rem .6rem;border-radius:8px;
-}
-.row--closed .row__time{background:transparent;color:var(--ink-soft)}
-.row--open .row__time{background:rgba(46,139,87,.16);color:var(--lime)}
-.sched__disclaimer{
-  padding:1rem clamp(1.1rem,3vw,1.6rem);font-size:.85rem;color:var(--ink-soft);
+/* find-today live-location panel (replaces fabricated schedule) */
+.findnow{padding:clamp(1.3rem,3vw,1.8rem) clamp(1.1rem,3vw,1.6rem)}
+.findnow__lead{color:var(--ink-soft);font-size:1rem;margin-bottom:1.3rem}
+.findnow__lead b{color:var(--ink)}
+.findnow__cta{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1rem}
+.findnow__note{font-size:.85rem;color:var(--ink-soft)}
+.findnow__note a{color:var(--chili);font-weight:700;border-bottom:1.5px solid rgba(214,58,30,.35)}
+.findnow__base{
+  padding:1.1rem clamp(1.1rem,3vw,1.6rem);
   background:var(--cream-2);border-top:2px dashed var(--line);
 }
+.findnow__base-eyebrow{
+  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--lime);margin-bottom:.35rem;
+}
+.findnow__base p{font-size:.92rem;color:var(--ink-soft);line-height:1.55}
+.findnow__base b{font-family:var(--font-display);font-weight:400;letter-spacing:.4px;color:var(--ink);font-size:1.02rem}
 
 .live{
   background:rgba(255,247,234,.06);border:1px solid rgba(255,247,234,.16);
@@ -562,8 +556,8 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:.98;lett
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
-  .scrollcue span,.pin{animation:none}
-  .btn:hover,.social:hover,.rave:hover,.tier:hover,.row--open:hover{transform:none}
+  .scrollcue span,.pin,.dot--live{animation:none}
+  .btn:hover,.social:hover,.rave:hover,.tier:hover{transform:none}
 }
 
 /* =========================================================
@@ -588,10 +582,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:.98;lett
   .cform__row{grid-template-columns:1fr}
   .raves__grid{grid-template-columns:1fr}
   .rave--big,.rave--wide{grid-column:span 1}
-  .row{grid-template-columns:52px 1fr;grid-template-areas:"day where" "day time"}
-  .row__day{grid-area:day}
-  .row__where{grid-area:where}
-  .row__time{grid-area:time;justify-self:start;margin-top:.3rem}
+  .findnow__cta{grid-template-columns:1fr}
   .foot__top{grid-template-columns:1fr}
-  .sched__legend{width:100%}
 }

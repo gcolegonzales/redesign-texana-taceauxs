@@ -260,55 +260,29 @@
 <section class="find section" id="find">
   <div class="find__head">
     <p class="eyebrow eyebrow--light">The money question</p>
-    <h2>Where&rsquo;s the truck<br>this week?</h2>
-    <p class="section__sub section__sub--light">We move. That&rsquo;s the whole point. Here&rsquo;s a sample week of stops &mdash; the live version lives on our socials, updated every few days.</p>
+    <h2>Where&rsquo;s the truck<br>right now?</h2>
+    <p class="section__sub section__sub--light">We move &mdash; that&rsquo;s the whole point. We post the day&rsquo;s exact spot on our socials before we open the window, so that&rsquo;s the one true source. Check there, then come hungry.</p>
   </div>
 
   <div class="find__grid">
-    <!-- Schedule table (honest, static sample) -->
+    <!-- Live-location panel: points to the real daily source (socials), no fabricated schedule -->
     <div class="sched">
       <div class="sched__topbar">
-        <span class="sched__month">This week&rsquo;s route</span>
-        <span class="sched__legend"><i class="lg lg--open"></i>Open stop <i class="lg lg--closed"></i>Off / private</span>
+        <span class="sched__month">Today&rsquo;s location</span>
+        <span class="sched__live"><i class="dot dot--live"></i>Posted daily on socials</span>
       </div>
-      <ul class="sched__list">
-        <li class="row row--closed">
-          <span class="row__day"><b>Mon</b></span>
-          <span class="row__where">Resting the flat-top</span>
-          <span class="row__time">Closed</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Tue</b></span>
-          <span class="row__where">RPCC — River Parishes Community College<span class="row__sub">Gonzales</span></span>
-          <span class="row__time">10:30&ndash;1:00</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Wed</b></span>
-          <span class="row__where">Swamp Chicken Daiquiris<span class="row__sub">evening set-up</span></span>
-          <span class="row__time">5:30&ndash;8:00</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Thu</b></span>
-          <span class="row__where">Subdivision pop-up<span class="row__sub">Prairieville / Dutchtown area</span></span>
-          <span class="row__time">5:00&ndash;7:30</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Fri</b></span>
-          <span class="row__where">Hwy 621 home base<span class="row__sub">39275 LA-621, Prairieville</span></span>
-          <span class="row__time">10:00&ndash;2:30</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Sat</b></span>
-          <span class="row__where">Marché in the Park / farmers market<span class="row__sub">rotating markets</span></span>
-          <span class="row__time">9:00&ndash;2:30</span>
-        </li>
-        <li class="row row--open">
-          <span class="row__day"><b>Sun</b></span>
-          <span class="row__where">Weekend service, when we&rsquo;re out<span class="row__sub">watch socials</span></span>
-          <span class="row__time">9:00&ndash;1:00</span>
-        </li>
-      </ul>
-      <p class="sched__disclaimer">Sample route based on our regular stops. <b>Always confirm the day&rsquo;s live location on Facebook or Instagram before you drive out</b> &mdash; private events and weather can change the plan.</p>
+      <div class="findnow">
+        <p class="findnow__lead">We park somewhere different most days &mdash; RPCC in Gonzales, neighborhood pop-ups, weekend markets, private events. The truck&rsquo;s exact spot for <b>today</b> always goes up on Facebook and Instagram first.</p>
+        <div class="findnow__cta">
+          <a class="btn btn--red btn--block" href="https://www.facebook.com/texanataceauxs/" target="_blank" rel="noopener">Find today&rsquo;s spot on Facebook &rarr;</a>
+          <a class="btn btn--yellow btn--block" href="https://www.instagram.com/texana_taceauxs/" target="_blank" rel="noopener">See it on Instagram &rarr;</a>
+        </div>
+        <p class="findnow__note">Following a private event or weather change? Same place we&rsquo;ll post it. When in doubt, text us &mdash; <a href="tel:+12252281192">(225)&nbsp;228-1192</a>.</p>
+      </div>
+      <div class="findnow__base">
+        <span class="findnow__base-eyebrow">Always here</span>
+        <p><b>Home base &middot; 39275 LA-621, Prairieville</b><br>Tue&ndash;Fri 10a&ndash;2:30p &middot; Sat 9a&ndash;2:30p &middot; Sun 9a&ndash;1p &middot; Mon closed</p>
+      </div>
     </div>
 
     <!-- Live-updates callout: distinct panel, not a card grid -->
