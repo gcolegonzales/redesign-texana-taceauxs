@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TexAna Taceauxs &amp; More — Tex-Mex meets Louisiana | Gonzales · Prairieville, LA</title>
+<meta name="description" content="TexAna Taceauxs & More is a Tex-Mex / Cajun-fusion food truck rolling through Gonzales, Prairieville & Ascension Parish. Birria, bang bang shrimp tacos, chicken bacon ranch & more. Find the truck, book catering, follow the flavor." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌮</text></svg>" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="brand" aria-label="TexAna Taceauxs and More — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="40" height="40" role="img" aria-label="taco">
+          <path d="M4 34c0-13 9-24 20-24s20 11 20 24Z" fill="#f4c430" stroke="#3a2216" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M9 33c3-2 7-2 10 0s7 2 10 0 7-2 10 0" fill="none" stroke="#e0451f" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="18" cy="27" r="2" fill="#2e8b57"/><circle cx="27" cy="24" r="2" fill="#e0451f"/><circle cx="33" cy="29" r="2" fill="#2e8b57"/>
+        </svg>
+      </span>
+      <span class="brand__type">
+        <b>TexAna Taceauxs</b>
+        <i>&amp; More</i>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#find">Find the Truck</a>
+      <a href="#story">Story</a>
+      <a href="#catering">Catering</a>
+      <a href="#visit">Visit</a>
+    </nav>
+
+    <a href="#catering" class="btn btn--pill nav__cta">Book the Truck</a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile" id="mobileMenu" hidden>
+    <a href="#menu">Menu</a>
+    <a href="#find">Find the Truck</a>
+    <a href="#story">Story</a>
+    <a href="#catering">Catering</a>
+    <a href="#visit">Visit</a>
+    <a href="#catering" class="btn btn--pill">Book the Truck</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__pattern" aria-hidden="true"></div>
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <p class="kicker"><span class="dot"></span>Gonzales · Prairieville · Ascension Parish</p>
+      <h1>Texas smoke.<br><span class="hl hl--red">Louisiana</span> soul.<br>Served off a <span class="hl hl--yellow">truck.</span></h1>
+      <p class="lede">Birria that drips, bang-bang shrimp tacos with a Cajun kick, chicken-bacon-ranch stacked on a fresh flour tortilla. Two flavor traditions, one window &mdash; wherever we park that day.</p>
+      <div class="hero__cta">
+        <a href="#find" class="btn btn--red">Where&rsquo;s the truck?</a>
+        <a href="#menu" class="btn btn--ghost">See the menu</a>
+      </div>
+      <ul class="hero__stats">
+        <li><b>2023</b><span>rolling &amp; feeding<br>the parish</span></li>
+        <li><b>Tex&times;LA</b><span>fusion done<br>from scratch</span></li>
+        <li><b>5&#9733;</b><span>&ldquo;best shrimp<br>tacos in years&rdquo;</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <!-- IMG-NEEDED: hero hand shot of birria taco dip. FB/IG-only source (token-blocked). Drop real photo at assets/photos/hero-taco.jpg — see assets/photos/DROP-PHOTOS-HERE.md -->
+      <div class="truckcard" data-photo="hero food truck / signature birria taco">
+        <div class="truckcard__photo js-photo" data-src="assets/photos/hero-taco.jpg">
+          <svg class="platter" viewBox="0 0 260 260" role="img" aria-label="illustrated taco platter">
+            <defs>
+              <radialGradient id="plate" cx="50%" cy="42%" r="60%">
+                <stop offset="0%" stop-color="#fff6e6"/><stop offset="100%" stop-color="#f2ddb8"/>
+              </radialGradient>
+            </defs>
+            <circle cx="130" cy="130" r="118" fill="url(#plate)" stroke="#e6c98f" stroke-width="3"/>
+            <path d="M40 150c0-40 30-72 90-72s90 32 90 72Z" fill="#f4c430" stroke="#3a2216" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M52 150c14-8 22-8 34 0s22 8 36 0 22-8 36 0 22 8 34 0" fill="none" stroke="#c9401d" stroke-width="8" stroke-linecap="round"/>
+            <path d="M60 148c12-5 20-5 30 0" stroke="#7fae5a" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <circle cx="96" cy="132" r="6" fill="#c9401d"/><circle cx="118" cy="126" r="6" fill="#2e8b57"/>
+            <circle cx="150" cy="124" r="6" fill="#c9401d"/><circle cx="172" cy="132" r="6" fill="#2e8b57"/>
+            <circle cx="130" cy="120" r="5" fill="#e88a1a"/>
+          </svg>
+        </div>
+        <div class="truckcard__tag">
+          <span class="truckcard__label">Fan favorite</span>
+          <strong>Birria Tacos</strong>
+          <em>chuck roast · chili consommé · GF</em>
+        </div>
+      </div>
+      <div class="hero__badge">Text-to-order<br><b>(225) 228-1192</b></div>
+    </div>
+  </div>
+  <a href="#menu" class="scrollcue" aria-hidden="true"><span></span>menu</a>
+</section>
+
+<!-- ============ MARQUEE-FREE FLAVOR STRIP (static, no motion) ============ -->
+<div class="strip" role="presentation">
+  <span>Birria</span><span class="sep">&bull;</span>
+  <span>Bang Bang Shrimp</span><span class="sep">&bull;</span>
+  <span>Chicken Bacon Ranch</span><span class="sep">&bull;</span>
+  <span>Chili Consommé</span><span class="sep">&bull;</span>
+  <span>Spicy Slaw</span><span class="sep">&bull;</span>
+  <span>Cajun Kick</span>
+</div>
+
+<!-- ============ MENU ============ -->
+<section class="menu section" id="menu">
+  <div class="section__head">
+    <p class="eyebrow">The Window</p>
+    <h2>What&rsquo;s coming out<br>of the truck</h2>
+    <p class="section__sub">Everything&rsquo;s made to order on the flat-top. The lineup rotates with what&rsquo;s fresh &mdash; here&rsquo;s what regulars come back for.</p>
+  </div>
+
+  <!-- Signature tacos: editorial ticket rows, NOT icon cards -->
+  <div class="board">
+    <div class="board__head">
+      <h3>Signature Tacos</h3>
+      <p>Mix &amp; match &mdash; built on fresh flour or corn tortillas.</p>
+    </div>
+
+    <ol class="tickets">
+      <li class="ticket">
+        <div class="ticket__body">
+          <h4>Bang Bang Shrimp Tacos</h4>
+          <p>Fried shrimp &amp; melted pepper jack on a flour tortilla, tossed in bang-bang sauce, topped with shredded slaw and spicy mayo. Served with chili-lime chips.</p>
+          <span class="ticket__flags"><span class="flag flag--heat">Spicy</span></span>
+        </div>
+        <div class="ticket__price"><span>market</span><b>/ each</b></div>
+      </li>
+
+      <li class="ticket">
+        <div class="ticket__body">
+          <h4>Chicken Bacon Ranch Tacos</h4>
+          <p>Grilled chicken thighs, crispy bacon &amp; melted Monterey, topped with lettuce and house-made ranch, served on warm flour tortillas.</p>
+          <span class="ticket__flags"><span class="flag">Crowd favorite</span></span>
+        </div>
+        <div class="ticket__price"><span>market</span><b>/ each</b></div>
+      </li>
+
+      <li class="ticket ticket--hero">
+        <div class="ticket__body">
+          <h4>Birria Tacos <span class="ticket__gf">GF</span></h4>
+          <p>Chuck roast slow-cooked in a chili consommé on corn tortillas with cheese &mdash; served with a side of consommé for dipping, onions, cilantro &amp; lime.</p>
+          <span class="ticket__flags"><span class="flag flag--gf">Gluten-free</span><span class="flag">Dips &amp; drips</span></span>
+        </div>
+        <div class="ticket__price"><span>market</span><b>/ order</b></div>
+      </li>
+    </ol>
+    <!-- MENU-INCOMPLETE: TexAna does not post a fixed standard price list publicly (orders are placed by text). Item names & descriptions above are confirmed from the business's own Valentine's "Tacos for 2" flyer and verified customer reviews. Per-item prices vary by event and are taken by text — shown as "market" rather than inventing a number. -->
+  </div>
+
+  <!-- Special: full-bleed feature spread, distinct from the board -->
+  <div class="special">
+    <div class="special__mark" aria-hidden="true">2</div>
+    <div class="special__copy">
+      <p class="eyebrow eyebrow--light">Order-ahead special</p>
+      <h3>Tacos for Two</h3>
+      <p>The truck&rsquo;s go-to bundle for date night, game day, or feeding a crew &mdash; mix &amp; match any of the signature three.</p>
+      <div class="special__tiers">
+        <div class="tier">
+          <b>$40</b><span>for 10 tacos</span>
+        </div>
+        <div class="tier tier--alt">
+          <b>$55</b><span>for 12 tacos</span>
+        </div>
+      </div>
+      <p class="special__note">Text to place your order &mdash; <a href="tel:+12252281192">(225) 228-1192</a>. Availability rotates with the schedule.</p>
+    </div>
+  </div>
+
+  <!-- Sides & extras: real table, no cards -->
+  <div class="extras">
+    <h3>On the side</h3>
+    <table class="extras__table">
+      <caption class="visually-hidden">Sides and extras served with tacos</caption>
+      <tbody>
+        <tr><th scope="row">Chili-Lime Chips</th><td>House-fried, dusted, tangy</td><td class="extras__p">add-on</td></tr>
+        <tr><th scope="row">Side of Consommé</th><td>Rich chili dipping broth</td><td class="extras__p">add-on</td></tr>
+        <tr><th scope="row">Spicy Slaw</th><td>Shredded, crunchy, a little heat</td><td class="extras__p">add-on</td></tr>
+        <tr><th scope="row">House Ranch</th><td>Made from scratch, for dipping</td><td class="extras__p">add-on</td></tr>
+      </tbody>
+    </table>
+    <p class="extras__foot">Menu rotates by event and season. Full priced menu is taken by text at each stop &mdash; ask what&rsquo;s on the flat-top today.</p>
+  </div>
+</section>
+
+<!-- ============ FIND THE TRUCK (MONEY FEATURE) ============ -->
+<section class="find section" id="find">
+  <div class="find__head">
+    <p class="eyebrow eyebrow--light">The money question</p>
+    <h2>Where&rsquo;s the truck<br>this week?</h2>
+    <p class="section__sub section__sub--light">We move. That&rsquo;s the whole point. Here&rsquo;s a sample week of stops &mdash; the live version lives on our socials, updated every few days.</p>
+  </div>
+
+  <div class="find__grid">
+    <!-- Schedule table (honest, static sample) -->
+    <div class="sched">
+      <div class="sched__topbar">
+        <span class="sched__month">This week&rsquo;s route</span>
+        <span class="sched__legend"><i class="lg lg--open"></i>Open stop <i class="lg lg--closed"></i>Off / private</span>
+      </div>
+      <ul class="sched__list">
+        <li class="row row--closed">
+          <span class="row__day"><b>Mon</b></span>
+          <span class="row__where">Resting the flat-top</span>
+          <span class="row__time">Closed</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Tue</b></span>
+          <span class="row__where">RPCC — River Parishes Community College<span class="row__sub">Gonzales</span></span>
+          <span class="row__time">10:30&ndash;1:00</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Wed</b></span>
+          <span class="row__where">Swamp Chicken Daiquiris<span class="row__sub">evening set-up</span></span>
+          <span class="row__time">5:30&ndash;8:00</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Thu</b></span>
+          <span class="row__where">Subdivision pop-up<span class="row__sub">Prairieville / Dutchtown area</span></span>
+          <span class="row__time">5:00&ndash;7:30</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Fri</b></span>
+          <span class="row__where">Hwy 621 home base<span class="row__sub">39275 LA-621, Prairieville</span></span>
+          <span class="row__time">10:00&ndash;2:30</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Sat</b></span>
+          <span class="row__where">Marché in the Park / farmers market<span class="row__sub">rotating markets</span></span>
+          <span class="row__time">9:00&ndash;2:30</span>
+        </li>
+        <li class="row row--open">
+          <span class="row__day"><b>Sun</b></span>
+          <span class="row__where">Weekend service, when we&rsquo;re out<span class="row__sub">watch socials</span></span>
+          <span class="row__time">9:00&ndash;1:00</span>
+        </li>
+      </ul>
+      <p class="sched__disclaimer">Sample route based on our regular stops. <b>Always confirm the day&rsquo;s live location on Facebook or Instagram before you drive out</b> &mdash; private events and weather can change the plan.</p>
+    </div>
+
+    <!-- Live-updates callout: distinct panel, not a card grid -->
+    <aside class="live">
+      <h3>Chasing us down?</h3>
+      <p>The truck&rsquo;s exact spot goes up on socials first. Follow along and you&rsquo;ll never miss us on your side of the parish.</p>
+      <div class="live__links">
+        <a class="social social--fb" href="https://www.facebook.com/texanataceauxs/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.6v8h3.6Z"/></svg>
+          <span>Facebook<i>@texanataceauxs</i></span>
+        </a>
+        <a class="social social--ig" href="https://www.instagram.com/texana_taceauxs/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 8.6A3.4 3.4 0 1 0 15.4 12 3.4 3.4 0 0 0 12 8.6Zm0 5.6A2.2 2.2 0 1 1 14.2 12 2.2 2.2 0 0 1 12 14.2Zm4.3-5.8a.8.8 0 1 1-.8-.8.8.8 0 0 1 .8.8ZM19 8.4a3.9 3.9 0 0 0-1.1-2.8A3.9 3.9 0 0 0 15.1 4.5c-1.1-.1-4.3-.1-5.4 0A3.9 3.9 0 0 0 6.9 5.6 3.9 3.9 0 0 0 5.8 8.4c-.1 1.1-.1 4.3 0 5.4A3.9 3.9 0 0 0 6.9 16.6 3.9 3.9 0 0 0 9.7 17.7c1.1.1 4.3.1 5.4 0a3.9 3.9 0 0 0 2.8-1.1 3.9 3.9 0 0 0 1.1-2.8c.1-1.1.1-4.3 0-5.4Zm-1.4 6.6a2.2 2.2 0 0 1-1.3 1.3c-.9.3-2.9.3-3.9.3s-3 .1-3.9-.3a2.2 2.2 0 0 1-1.3-1.3c-.3-.9-.3-2.9-.3-3.9s-.1-3 .3-3.9A2.2 2.2 0 0 1 8.1 6.2c.9-.3 2.9-.3 3.9-.3s3-.1 3.9.3a2.2 2.2 0 0 1 1.3 1.3c.3.9.3 2.9.3 3.9s0 3-.3 3.9Z"/></svg>
+          <span>Instagram<i>@texana_taceauxs</i></span>
+        </a>
+        <a class="social social--tk" href="https://www.tiktok.com/@texana.taceauxs" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16.5 3c.3 2 1.6 3.6 3.5 4v2.5a6.9 6.9 0 0 1-3.5-1v5.9a5.4 5.4 0 1 1-5.4-5.4c.3 0 .5 0 .8.1v2.6a2.9 2.9 0 1 0 2 2.7V3Z"/></svg>
+          <span>TikTok<i>@texana.taceauxs</i></span>
+        </a>
+      </div>
+      <p class="live__hours"><b>Home base hours</b><br>Tue&ndash;Fri 10a&ndash;2:30p · Sat 9a&ndash;2:30p · Sun 9a&ndash;1p · Mon closed</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ STORY (alternating editorial) ============ -->
+<section class="story section" id="story">
+  <div class="story__row">
+    <div class="story__art" aria-hidden="true">
+      <!-- IMG-NEEDED: the truck / owner shot — FB/IG only (token-blocked). Drop at assets/photos/truck.jpg -->
+      <div class="photo-frame js-photo" data-src="assets/photos/truck.jpg" data-photo="the TexAna truck parked at an event">
+        <svg viewBox="0 0 320 220" role="img" aria-label="illustration of the food truck">
+          <rect x="0" y="0" width="320" height="220" fill="#0e2a2a"/>
+          <rect x="30" y="70" width="230" height="90" rx="10" fill="#e0451f"/>
+          <rect x="42" y="82" width="120" height="52" rx="6" fill="#12403c"/>
+          <rect x="52" y="92" width="100" height="32" rx="3" fill="#f4c430"/>
+          <text x="102" y="114" text-anchor="middle" font-family="Bakbak One, sans-serif" font-size="15" fill="#0e2a2a">TACEAUXS</text>
+          <rect x="176" y="82" width="72" height="52" rx="6" fill="#12403c"/>
+          <circle cx="212" cy="108" r="16" fill="#f4c430"/>
+          <rect x="30" y="150" width="230" height="16" fill="#3a2216"/>
+          <circle cx="80" cy="176" r="20" fill="#1a1a1a" stroke="#555" stroke-width="4"/>
+          <circle cx="210" cy="176" r="20" fill="#1a1a1a" stroke="#555" stroke-width="4"/>
+          <path d="M40 62c8-10 18-10 26 0M120 60c8-10 18-10 26 0" stroke="#f4c430" stroke-width="3" fill="none" opacity=".6"/>
+        </svg>
+      </div>
+    </div>
+    <div class="story__copy">
+      <p class="eyebrow">Since 2023</p>
+      <h2>Two states on<br>one flat-top</h2>
+      <p>TexAna started with a simple idea: you shouldn&rsquo;t have to pick between a proper Texas taco and Louisiana&rsquo;s love of anything fried, spiced, and shareable. So we put both on the truck.</p>
+      <p>We&rsquo;re a small, women-owned local business &mdash; rolling through Gonzales, Prairieville and across Ascension Parish, setting up at RPCC, neighborhood pop-ups, farmers markets and private events. <em>&ldquo;The only thing different between us and a brick-and-mortar,&rdquo;</em> as our owner puts it, <em>&ldquo;is that we can travel to you.&rdquo;</em></p>
+      <ul class="story__facts">
+        <li><b>Women-owned</b> &amp; parish-proud</li>
+        <li><b>From scratch</b> — ranch, slaw, consommé</li>
+        <li><b>Everywhere</b> — markets, schools, your street</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS (pull-quote band, not toast cards) ============ -->
+<section class="raves section" aria-label="What guests say">
+  <div class="raves__head">
+    <p class="eyebrow eyebrow--light">Word on the street</p>
+    <h2>People chase this truck</h2>
+  </div>
+  <div class="raves__grid">
+    <figure class="rave rave--big">
+      <blockquote>&ldquo;The shrimp tacos were the best I&rsquo;ve had in years.&rdquo;</blockquote>
+      <figcaption>John G. &mdash; <span>5&#9733; review</span></figcaption>
+    </figure>
+    <figure class="rave">
+      <blockquote>&ldquo;Fresh ingredients and great flavor. The chicken ranch and birria tacos are awesome.&rdquo;</blockquote>
+      <figcaption>Alberto V. &mdash; <span>5&#9733;</span></figcaption>
+    </figure>
+    <figure class="rave">
+      <blockquote>&ldquo;The bang bang chicken and shrimp tacos are absolutely delicious.&rdquo;</blockquote>
+      <figcaption>Ni Yao A. &mdash; <span>5&#9733;</span></figcaption>
+    </figure>
+    <figure class="rave rave--wide">
+      <blockquote>&ldquo;Delicious food, amazing service &mdash; everything on the menu was fantastic. Will definitely return!&rdquo;</blockquote>
+      <figcaption>Joan V. &mdash; <span>5&#9733;</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ CATERING (MONEY FEATURE FORM) ============ -->
+<section class="catering section" id="catering">
+  <div class="catering__grid">
+    <div class="catering__pitch">
+      <p class="eyebrow">Bring the truck to you</p>
+      <h2>Catering &amp;<br>private events</h2>
+      <p>Graduations, crawfish-season crowds, office lunches, weddings, subdivision block parties &mdash; we&rsquo;ll roll up and feed everybody straight off the truck.</p>
+      <ol class="steps">
+        <li><span class="steps__n">1</span><div><b>Tell us the plan</b><p>Date, spot, and a rough headcount.</p></div></li>
+        <li><span class="steps__n">2</span><div><b>We build a menu</b><p>Taco bars, bundles, or a full spread.</p></div></li>
+        <li><span class="steps__n">3</span><div><b>We show up hot</b><p>Cooked fresh, on-site, on time.</p></div></li>
+      </ol>
+      <p class="catering__ping"><strong>Booking fast:</strong> graduation &amp; wedding weekends fill early &mdash; get on the calendar.</p>
+    </div>
+
+    <div class="catering__formwrap">
+      <form class="cform" id="cateringForm" novalidate>
+        <p class="cform__title">Request a catering quote</p>
+        <div class="cform__row">
+          <label>Your name
+            <input type="text" name="name" autocomplete="name" required placeholder="First &amp; last" />
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="(225) 000-0000" />
+          </label>
+        </div>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" placeholder="you@email.com" />
+        </label>
+        <div class="cform__row">
+          <label>Event date
+            <input type="date" name="date" required />
+          </label>
+          <label>Headcount
+            <input type="number" name="guests" min="10" inputmode="numeric" placeholder="approx." />
+          </label>
+        </div>
+        <label>Location / event type
+          <input type="text" name="place" placeholder="e.g. Prairieville — grad party" />
+        </label>
+        <label>Anything else?
+          <textarea name="notes" rows="3" placeholder="Menu ideas, timing, dietary needs…"></textarea>
+        </label>
+        <button type="submit" class="btn btn--red btn--block">Send inquiry</button>
+        <p class="cform__fine">This sends us your details so we can text or email you back. Prefer to talk now? Call <a href="tel:+12252281192">(225)&nbsp;228-1192</a>.</p>
+        <p class="cform__ok" id="formOk" role="status" hidden>Got it! We&rsquo;ll reach out to lock in your date. (Demo form &mdash; not yet wired to a live inbox.)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / CONTACT ============ -->
+<section class="visit section" id="visit">
+  <div class="visit__grid">
+    <div class="visit__info">
+      <p class="eyebrow eyebrow--light">Come find us</p>
+      <h2>Home base &amp;<br>how to reach us</h2>
+      <dl class="visit__list">
+        <div>
+          <dt>Text / call to order</dt>
+          <dd><a href="tel:+12252281192" class="visit__phone">(225) 228-1192</a></dd>
+        </div>
+        <div>
+          <dt>Home base</dt>
+          <dd><a href="https://maps.google.com/maps?q=39275+LA-621,+Prairieville,+LA+70769" target="_blank" rel="noopener">39275 LA-621, Prairieville, LA 70769</a></dd>
+        </div>
+        <div>
+          <dt>Service area</dt>
+          <dd>Gonzales · Prairieville · Dutchtown · all of Ascension Parish</dd>
+        </div>
+        <div>
+          <dt>Hours (home base)</dt>
+          <dd>Mon closed · Tue&ndash;Fri 10a&ndash;2:30p · Sat 9a&ndash;2:30p · Sun 9a&ndash;1p</dd>
+        </div>
+        <div>
+          <dt>Good to know</dt>
+          <dd>Women-owned · cards &amp; debit accepted · free parking</dd>
+        </div>
+      </dl>
+      <div class="visit__socials">
+        <a href="https://www.facebook.com/texanataceauxs/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+        <a href="https://www.instagram.com/texana_taceauxs/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@texana.taceauxs" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <div class="visit__map">
+      <a class="maplink" href="https://maps.google.com/maps?q=39275+LA-621,+Prairieville,+LA+70769" target="_blank" rel="noopener" aria-label="Open home base in Google Maps">
+        <div class="maplink__grid" aria-hidden="true">
+          <span class="pin"></span>
+        </div>
+        <span class="maplink__label">39275 LA-621, Prairieville<br><b>Open in Maps &rarr;</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot__top">
+    <div class="foot__brand">
+      <span class="brand__type brand__type--foot">
+        <b>TexAna Taceauxs</b><i>&amp; More</i>
+      </span>
+      <p>Tex-Mex meets Louisiana, one stop at a time. Chasing good food across Ascension Parish since 2023.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="#menu">Menu</a>
+      <a href="#find">Find the Truck</a>
+      <a href="#catering">Catering</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="foot__cta">
+      <a href="tel:+12252281192" class="btn btn--yellow">Text to order · (225) 228-1192</a>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <p>&copy; <span id="yr"></span> TexAna Taceauxs &amp; More · Prairieville, LA</p>
+    <p class="foot__note">Unsolicited redesign concept &mdash; not the business&rsquo;s official site.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
