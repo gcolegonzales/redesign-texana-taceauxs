@@ -45,25 +45,66 @@
     document.body.appendChild(menu);
     menu.hidden = false; // visibility now controlled by transform/.open, not [hidden]
 
-    var closeMenu = function () {
+    // Everything in <body> except the drawer + scrim gets inerted while open.
+    var bgTargets = [];
+    Array.prototype.forEach.call(document.body.children, function (el) {
+      if (el !== menu && el !== scrim) bgTargets.push(el);
+    });
+    var setBackgroundInert = function (on) {
+      bgTargets.forEach(function (el) {
+        if (on) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); }
+        else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); }
+      });
+    };
+    // When closed (or on desktop), keep off-canvas links out of the tab order.
+    var setDrawerInert = function (on) {
+      if (on) menu.setAttribute('inert', '');
+      else menu.removeAttribute('inert');
+    };
+    var focusables = function () {
+      return Array.prototype.filter.call(
+        menu.querySelectorAll('a[href],button:not([disabled])'),
+        function (el) { return el.offsetParent !== null || el === document.activeElement; }
+      );
+    };
+
+    var lastFocused = null;
+
+    var closeMenu = function (returnFocus) {
       menuOpen = false;
       menu.classList.remove('open');
       scrim.classList.remove('open');
+      setBackgroundInert(false);
+      setDrawerInert(true);
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open menu');
+      if (returnFocus !== false && lastFocused) { try { lastFocused.focus(); } catch (e) {} }
       window.setTimeout(function () { if (!menuOpen) scrim.setAttribute('hidden', ''); }, 320);
     };
     var openMenu = function () {
       menuOpen = true;
+      lastFocused = toggle;
       scrim.removeAttribute('hidden');
       // force reflow so the transition runs from the hidden state
       void scrim.offsetWidth;
+      setDrawerInert(false);
       menu.classList.add('open');
       scrim.classList.add('open');
       nav.classList.remove('nav--hidden');
+      setBackgroundInert(true);
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close menu');
+      // Move focus into the drawer (close button, then first link).
+      var f = menu.querySelector('#mobileClose') || focusables()[0];
+      if (f) { try { f.focus(); } catch (e) {} }
     };
+
+    // Start closed → drawer must not be reachable by Tab.
+    setDrawerInert(true);
 
     toggle.addEventListener('click', function () {
       if (menuOpen) closeMenu(); else openMenu();
@@ -71,16 +112,38 @@
     // In-panel close button — lives inside the top-most drawer layer, so it is
     // always tappable on touch even when the panel paints over the header toggle.
     var panelClose = menu.querySelector('#mobileClose');
-    if (panelClose) panelClose.addEventListener('click', closeMenu);
-    scrim.addEventListener('click', closeMenu);
+    if (panelClose) panelClose.addEventListener('click', function () { closeMenu(); });
+    scrim.addEventListener('click', function () { closeMenu(); });
     menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeMenu);
+      // Nav-link tap: let navigation proceed, restore state but don't steal focus.
+      a.addEventListener('click', function () { closeMenu(false); });
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menuOpen) { closeMenu(); toggle.focus(); }
+      if (!menuOpen) return;
+      if (e.key === 'Escape') { closeMenu(); return; }
+      if (e.key === 'Tab') {
+        var items = focusables();
+        if (!items.length) { e.preventDefault(); return; }
+        var first = items[0], last = items[items.length - 1];
+        var active = document.activeElement;
+        if (e.shiftKey && (active === first || !menu.contains(active))) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && (active === last || !menu.contains(active))) {
+          e.preventDefault(); first.focus();
+        }
+      }
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 960 && menuOpen) closeMenu();
+      if (window.innerWidth > 960) {
+        if (menuOpen) closeMenu(false);
+        // Ensure a clean desktop state: drawer not tabbable, toggle collapsed.
+        setDrawerInert(true);
+        setBackgroundInert(false);
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      }
     });
   }
 
@@ -137,6 +200,15 @@
   /* ---- catering form (demo — not wired to a live inbox) ---- */
   var form = document.getElementById('cateringForm');
   var ok = document.getElementById('formOk');
+  // Event date can't be in the past — set min to today (local time).
+  var dateField = form && form.querySelector('input[name="date"]');
+  if (dateField) {
+    var now = new Date();
+    var iso = now.getFullYear() + '-' +
+      ('0' + (now.getMonth() + 1)).slice(-2) + '-' +
+      ('0' + now.getDate()).slice(-2);
+    dateField.setAttribute('min', iso);
+  }
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
