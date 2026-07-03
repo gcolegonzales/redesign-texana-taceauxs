@@ -68,6 +68,10 @@
     toggle.addEventListener('click', function () {
       if (menuOpen) closeMenu(); else openMenu();
     });
+    // In-panel close button — lives inside the top-most drawer layer, so it is
+    // always tappable on touch even when the panel paints over the header toggle.
+    var panelClose = menu.querySelector('#mobileClose');
+    if (panelClose) panelClose.addEventListener('click', closeMenu);
     scrim.addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', closeMenu);
