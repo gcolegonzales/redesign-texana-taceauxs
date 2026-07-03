@@ -8,44 +8,79 @@
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ---- sticky nav shrink on scroll ---- */
+  /* ---- sticky nav: shrink + hide-on-scroll-down / reveal-on-scroll-up ---- */
   var nav = document.getElementById('nav');
+  var lastY = window.scrollY;
   var onScroll = function () {
     if (!nav) return;
-    if (window.scrollY > 20) nav.classList.add('shrink');
+    var y = window.scrollY;
+    if (y > 20) nav.classList.add('shrink');
     else nav.classList.remove('shrink');
+
+    // Reveal on ANY upward scroll; hide only when scrolling down past the header.
+    if (menuOpen) {
+      nav.classList.remove('nav--hidden');
+    } else if (y > lastY && y > 90) {
+      nav.classList.add('nav--hidden');      // scrolling down
+    } else if (y < lastY) {
+      nav.classList.remove('nav--hidden');   // scrolling up (even a few px)
+    }
+    lastY = y;
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  /* ---- mobile menu ---- */
+  /* ---- mobile drawer menu ---- */
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('mobileMenu');
-  var closeMenu = function () {
-    if (!menu) return;
-    menu.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-  };
-  var openMenu = function () {
-    menu.hidden = false;
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close menu');
-  };
+  var menuOpen = false;
+  var scrim = null;
+
   if (toggle && menu) {
+    // Relocate drawer + scrim OUT of the backdrop-filtered <header> so their
+    // position:fixed resolves against the viewport (full-height, no bottom gap).
+    scrim = document.createElement('div');
+    scrim.className = 'nav-scrim';
+    scrim.setAttribute('hidden', '');
+    document.body.appendChild(scrim);
+    document.body.appendChild(menu);
+    menu.hidden = false; // visibility now controlled by transform/.open, not [hidden]
+
+    var closeMenu = function () {
+      menuOpen = false;
+      menu.classList.remove('open');
+      scrim.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      window.setTimeout(function () { if (!menuOpen) scrim.setAttribute('hidden', ''); }, 320);
+    };
+    var openMenu = function () {
+      menuOpen = true;
+      scrim.removeAttribute('hidden');
+      // force reflow so the transition runs from the hidden state
+      void scrim.offsetWidth;
+      menu.classList.add('open');
+      scrim.classList.add('open');
+      nav.classList.remove('nav--hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+    };
+
     toggle.addEventListener('click', function () {
-      if (menu.hidden) openMenu(); else closeMenu();
+      if (menuOpen) closeMenu(); else openMenu();
     });
+    scrim.addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', closeMenu);
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); }
+      if (e.key === 'Escape' && menuOpen) { closeMenu(); toggle.focus(); }
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 960 && !menu.hidden) closeMenu();
+      if (window.innerWidth > 960 && menuOpen) closeMenu();
     });
   }
+
+  onScroll();
 
   /* ---- scroll reveal via IntersectionObserver ---- */
   var revealTargets = [
